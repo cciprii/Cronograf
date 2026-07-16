@@ -1,6 +1,6 @@
 # CronoGraf
 
-CronoGraf este o aplicație web pentru explorarea și construirea unui arbore genealogic interactiv, cu suport pentru autentificare și o experiență de navigare modernă.
+Cronograf este un site care arata cum se pot folosi nodurile invatate la informatica. Avem o portiune de wikipedia pe noduri pentru utilizatori neautentificati, iar posibilitatea de a crea un arbore genealogic pentru cei care au cont.
 
 ## Funcționalități
 
@@ -32,10 +32,7 @@ CronoGraf este o aplicație web pentru explorarea și construirea unui arbore ge
    npm install
    ```
 
-3. Creează un fișier `.env` pe baza exemplului:
-   ```bash
-   cp .env.example .env
-   ```
+3. Creează un fișier `.env`
 
 4. Completează variabilele de mediu cu datele tale Supabase:
    ```env
@@ -54,19 +51,3 @@ CronoGraf este o aplicație web pentru explorarea și construirea unui arbore ge
 npm run build
 ```
 
-## Publicare pe GitHub
-
-1. Creează un repository nou pe GitHub.
-2. În folderul proiectului rulează:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/USERNAME/REPO_NAME.git
-   git push -u origin main
-   ```
-
-## Notă importantă
-
-Nu încărca fișierul `.env` în GitHub. Adaugă `.env` în `.gitignore` și păstrează cheia secretă doar local.
