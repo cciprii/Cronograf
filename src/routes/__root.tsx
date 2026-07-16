@@ -18,16 +18,16 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">Pagina nu a fost găsită</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist.
+          Pagina pe care o cauți nu există.
         </p>
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
           >
-            Go home
+            Înapoi acasă
           </Link>
         </div>
       </div>
@@ -41,13 +41,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold text-foreground">Something went wrong</h1>
+        <h1 className="text-xl font-semibold text-foreground">Ceva nu a mers bine</h1>
         <p className="mt-2 text-sm text-muted-foreground">{error.message}</p>
         <button
           onClick={() => { router.invalidate(); reset(); }}
           className="mt-6 inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
         >
-          Try again
+          Încearcă din nou
         </button>
       </div>
     </div>
@@ -60,7 +60,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "CronoGraf" },
-      { name: "description", content: "Build and explore your ancestry tree." },
+      { name: "description", content: "Construiește și explorează arborele tău genealogic." },
     ],
     links: [{ rel: "stylesheet", href: appCss }],
   }),
@@ -100,8 +100,8 @@ function NavBar() {
       <nav className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
         <Link to="/" className="text-lg font-bold tracking-tight">CronoGraf</Link>
         <div className="flex items-center gap-1">
-          <Link to="/" className={linkCls} activeProps={{ className: `${linkCls} ${activeCls}` }} activeOptions={{ exact: true }}>Home</Link>
-          <Link to="/ancestry" className={linkCls} activeProps={{ className: `${linkCls} ${activeCls}` }}>Ancestry Tree</Link>
+          <Link to="/" className={linkCls} activeProps={{ className: `${linkCls} ${activeCls}` }} activeOptions={{ exact: true }}>Acasă</Link>
+          <Link to="/ancestry" className={linkCls} activeProps={{ className: `${linkCls} ${activeCls}` }}>Arbore genealogic</Link>
           <Link to="/wiki" className={linkCls} activeProps={{ className: `${linkCls} ${activeCls}` }}>Wiki</Link>
           {email ? (
             <>
@@ -109,10 +109,10 @@ function NavBar() {
               <button
                 onClick={async () => { await supabase.auth.signOut(); router.navigate({ to: "/" }); }}
                 className={linkCls}
-              >Sign out</button>
+              >Deconectare</button>
             </>
           ) : (
-            <Link to="/login" className={linkCls} activeProps={{ className: `${linkCls} ${activeCls}` }}>Login</Link>
+            <Link to="/login" className={linkCls} activeProps={{ className: `${linkCls} ${activeCls}` }}>Autentificare</Link>
           )}
         </div>
       </nav>

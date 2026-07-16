@@ -22,7 +22,7 @@ function LoginPage() {
       if (mode === "signin") {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
-        toast.success("Welcome back");
+        toast.success("Bine ai revenit");
         navigate({ to: "/ancestry" });
       } else {
         const { error } = await supabase.auth.signUp({
@@ -31,11 +31,11 @@ function LoginPage() {
           options: { emailRedirectTo: `${window.location.origin}/ancestry` },
         });
         if (error) throw error;
-        toast.success("Account created. Check your email if confirmation is required.");
+        toast.success("Contul a fost creat. Verifică email-ul dacă este necesară confirmarea.");
         navigate({ to: "/ancestry" });
       }
     } catch (err: any) {
-      toast.error(err.message ?? "Authentication failed");
+      toast.error(err.message ?? "Autentificarea a eșuat");
     } finally {
       setLoading(false);
     }
@@ -44,9 +44,9 @@ function LoginPage() {
   return (
     <div className="mx-auto flex min-h-[calc(100vh-3.5rem)] max-w-md items-center px-4 py-12">
       <div className="w-full rounded-xl border bg-card p-8 shadow-sm">
-        <h1 className="text-2xl font-semibold">{mode === "signin" ? "Login" : "Create account"}</h1>
+        <h1 className="text-2xl font-semibold">{mode === "signin" ? "Autentificare" : "Creează cont"}</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          {mode === "signin" ? "Sign in to access your ancestry tree." : "Sign up to build your private tree."}
+          {mode === "signin" ? "Autentifică-te pentru a accesa arborele tău genealogic." : "Înregistrează-te pentru a-ți construi arborele privat."}
         </p>
 
         <form onSubmit={submit} className="mt-6 space-y-4">
@@ -59,7 +59,7 @@ function LoginPage() {
             />
           </div>
           <div>
-            <label className="text-sm font-medium">Password</label>
+            <label className="text-sm font-medium">Parolă</label>
             <input
               type="password" required minLength={6} value={password} disabled={loading}
               onChange={(e) => setPassword(e.target.value)}
@@ -70,7 +70,7 @@ function LoginPage() {
             type="submit" disabled={loading}
             className="w-full rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 disabled:opacity-60"
           >
-            {loading ? "Working…" : mode === "signin" ? "Sign in" : "Sign up"}
+            {loading ? "Se procesează…" : mode === "signin" ? "Autentifică-te" : "Înregistrează-te"}
           </button>
         </form>
 
@@ -78,7 +78,7 @@ function LoginPage() {
           onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
           className="mt-4 w-full text-center text-sm text-muted-foreground hover:text-foreground"
         >
-          {mode === "signin" ? "No account? Sign up" : "Already have an account? Sign in"}
+          {mode === "signin" ? "Nu ai cont? Creează unul" : "Ai deja un cont? Autentifică-te"}
         </button>
       </div>
     </div>

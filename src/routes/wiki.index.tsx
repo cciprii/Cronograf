@@ -23,9 +23,9 @@ const entries = [
 function WikiIndex() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-10">
-      <h1 className="text-3xl font-bold">Wiki Nodes</h1>
+      <h1 className="text-3xl font-bold">Noduri Wiki</h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        Explore interactive node-graphs of historical topics.
+        Explorează grafuri interactive de noduri pentru subiecte istorice.
       </p>
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {entries.map((e) => (

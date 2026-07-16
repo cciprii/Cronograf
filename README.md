@@ -1,6 +1,6 @@
 # CronoGraf
 
-Cronograf este un site care arata cum se pot folosi nodurile invatate la informatica. Avem o portiune de wikipedia pe noduri pentru utilizatori neautentificati, iar posibilitatea de a crea un arbore genealogic pentru cei care au cont.
+CronoGraf este o aplicație web care demonstrează utilizarea conceptelor de noduri și grafuri în contextul informaticii. Proiectul include o secțiune de wiki interactivă pentru utilizatorii neautentificați și posibilitatea de a crea și gestiona un arbore genealogic personal pentru utilizatorii care au cont.
 
 ## Funcționalități
 
@@ -18,6 +18,13 @@ Cronograf este un site care arata cum se pot folosi nodurile invatate la informa
 - Supabase
 - Tailwind CSS
 - TypeScript
+
+## Cerințe de sistem
+
+Pentru rularea locală este necesar:
+- Node.js
+- npm
+- acces la internet pentru conectarea la Supabase
 
 ## Pornire locală
 
